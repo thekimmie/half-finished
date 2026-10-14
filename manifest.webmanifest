@@ -1,17 +1,13 @@
 {
-  "name": "Half-Finished \u2014 Your creative little corner",
+  "name": "Half-Finished — Your creative little corner",
   "short_name": "Half-Finished",
   "description": "Pick up where you left off.",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#fff8ed",
+  "background_color": "#151116",
   "theme_color": "#ea4b5f",
   "icons": [
-    {
-      "src": "wildrumpus-key.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    }
+    {"src":"wildrumpus-key-widget.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"wildrumpus-key-appicon.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
   ]
 }
