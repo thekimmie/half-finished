@@ -62,3 +62,7 @@ Vanilla HTML, CSS, JavaScript; localStorage and canvas image compression. No ext
 The maker's [Wild Rumpus Agenda](https://www.wildrumpusagenda.com/) inspired a more theatrical, storybook visual identity: inky plum, electric fuchsia, antique-gold details, a bespoke ornate key, soft paper textures, and collected-curiosity frames. `studio-theme.css` holds the visual overrides and `studio-key.svg` is the key artwork. To revert the redesign without changing the app or its data, remove the `studio-theme.css` link from `index.html` and restore the previous hero HTML.
 
 This release changes **only presentation and microcopy**. It deliberately retains the `half-finished-v1-projects` local-storage key, project model, and all CRUD/export/import behavior; existing local projects should continue to load on the same browser/device.
+
+## v0.3 original maker logo + Wild Rumpus colors
+
+The ornamental logo is a faithful vector tracing of the original uploaded artwork, credited to its creator, Kimmie Hamilton. Palette anchored by the original coral pink (#EA4B5F), with tangerine, marigold, teal and lilac accents. This is a visual-only update; project storage and saved records are unchanged. Do not reuse the logo outside this project without its creator’s permission.
