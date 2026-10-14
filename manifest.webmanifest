@@ -1,0 +1,10 @@
+{
+  "name": "Half-Finished — Your creative little corner",
+  "short_name": "Half-Finished",
+  "description": "Pick up where you left off.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#faf6eb",
+  "theme_color": "#faf6eb",
+  "icons": [{"src":"favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]
+}
