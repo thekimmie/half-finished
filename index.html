@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f8f3e7">
+  <meta name="description" content="A gentle home for your unfinished creative projects. Pick up where you left off.">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>Half-Finished — Your creative little corner</title>
+<style>
+:root {
+ --ink:#302638; --muted:#736b75; --cream:#faf6eb; --paper:#fffdf6; --purple:#7656a8;
+ --lavender:#e8def9; --lime:#d6e99c; --peach:#f8b9a4; --coral:#f18778; --stroke:#dcd2c7;
+ --shadow:0 15px 35px rgba(72,48,56,.075); --round:22px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0; background:var(--cream);color:var(--ink);font-family:"Trebuchet MS",Arial,sans-serif;font-size:15px;line-height:1.5}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer} button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #8c66c2;outline-offset:3px}
+a{color:inherit}
+button{transition:transform .14s, background .14s} button:hover{transform:translateY(-1px)}
+button:disabled{opacity:.45;cursor:not-allowed}
+button:disabled:hover{transform:none}
+.site-shell{max-width:1190px;padding:0 24px;margin:0 auto}
+.topbar{height:93px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:15px;background:#d9caed;font-size:25px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.85);transform:rotate(-8deg)}
+.brand-text{font-family:Georgia,serif;font-size:26px;line-height:1;letter-spacing:-1.2px;font-weight:bold}
+.brand-sub{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;margin-top:5px;color:var(--muted);font-weight:bold}
+.top-links{display:flex;align-items:center;gap:12px}
+.soft-action,.outline-btn,.dark-btn,.icon-button,.ghost-btn{border:0;border-radius:999px;font-weight:bold}
+.soft-action{padding:10px 15px;background:#f1e9db;color:#554b55}
+.soft-action:hover{background:#e8dbcb}
+.dark-btn{background:var(--ink);color:white;padding:12px 19px;box-shadow:0 5px 0 #c6b9be}
+.dark-btn:hover{background:#504258}
+.ghost-btn{background:none;padding:10px 13px;color:var(--muted)}
+.ghost-btn:hover{background:#ede7dc}
+.outline-btn{background:var(--paper);color:var(--ink);padding:11px 16px;border:1.5px solid #cdbfd1}
+.outline-btn:hover{background:#f3eef6}
+.icon-button{width:36px;height:36px;display:grid;place-items:center;background:#f5ede6;color:var(--ink);font-size:20px}
+.hero{min-height:312px;background:#ebdff2;position:relative;overflow:hidden;border:1.5px solid #d6c6df;box-shadow:var(--shadow);border-radius:29px;display:grid;grid-template-columns:1.3fr .8fr;isolation:isolate}
+.hero::before{content:"";position:absolute;width:410px;height:410px;border:1.5px dashed #a58cbd;border-radius:50%;right:-146px;top:-180px;opacity:.6;z-index:-1}
+.hero::after{content:"";position:absolute;width:240px;height:240px;border:1.5px dashed #a58cbd;border-radius:50%;right:50px;bottom:-183px;opacity:.6;z-index:-1}
+.hero-copy{padding:43px 0 42px 51px;z-index:1}
+.eyebrow{font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:2.5px;color:#75568b;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:26px;height:1.5px;background:currentColor}
+h1{font-family:Georgia,serif;font-size:clamp(37px,4.8vw,63px);font-weight:normal;letter-spacing:-2.8px;line-height:1.04;max-width:680px;margin:19px 0 17px}
+h1 em{font-style:italic;color:#805ea5}
+.hero-copy p{font-size:16px;line-height:1.6;max-width:460px;color:#68576e;margin:0 0 26px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.hero-visual{position:relative;min-height:270px;display:flex;align-items:center;justify-content:center;padding:22px}
+.paper-note{width:220px;height:226px;background:#fffaf0;transform:rotate(7deg);border:1px solid #e8dfd0;box-shadow:9px 15px 0 rgba(119,83,141,.07),0 10px 30px rgba(49,37,51,.12);border-radius:5px;padding:26px 24px;position:relative}
+.paper-note::before{content:"";width:81px;height:26px;background:#f7b79fbb;position:absolute;top:-13px;left:67px;transform:rotate(-5deg)}
+.note-title{font-family:Georgia,serif;font-style:italic;font-size:19px;line-height:1.2;transform:rotate(-4deg)}
+.note-list{padding:0;list-style:none;margin:24px 0 0;display:grid;gap:11px;font-size:13px;color:#625866}
+.note-list li{display:flex;align-items:center;gap:9px}.note-list li span{display:grid;place-items:center;border:1.5px solid #aa91a4;border-radius:5px;width:17px;height:17px;line-height:1;flex:none}
+.note-list li:first-child span{background:#d7e7b9}
+.flower{position:absolute;font-size:51px;color:#805e9d;line-height:1}.flower.one{right:13%;top:13%;transform:rotate(-15deg)}.flower.two{left:10%;bottom:10%;font-size:38px;color:#ea927f}
+.spark{position:absolute;color:#df9b70;font-size:27px}.spark.one{right:9%;bottom:24%}.spark.two{left:15%;top:18%;font-size:18px}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-top:38px;margin-bottom:16px}
+.section-head h2{font-family:Georgia,serif;font-size:32px;font-weight:normal;letter-spacing:-.9px;margin:0}
+.section-head p{margin:5px 0 0;color:var(--muted);font-size:14px}
+.section-actions{display:flex;gap:9px;flex-wrap:wrap}
+.studio-meta{display:flex;gap:12px;margin:19px 0 20px;flex-wrap:wrap}
+.meta-pill{display:flex;gap:7px;align-items:center;font-size:13px;color:#5c5361;border:1px solid #e4dcd0;background:#fffcf4;border-radius:999px;padding:8px 12px}
+.meta-dot{width:8px;height:8px;border-radius:50%;background:#a885d0;display:inline-block}
+.meta-dot.paused{background:#ecb675}.meta-dot.finished{background:#9cbe8b}
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 20px}
+.filter{border:1px solid transparent;background:transparent;color:#68616a;font-weight:bold;padding:9px 15px;border-radius:999px;font-size:13px}
+.filter[aria-pressed="true"]{background:var(--ink);color:white}
+.filter:hover:not([aria-pressed="true"]){background:#eee6dc}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:21px;margin-bottom:44px}
+.project{border:1.5px solid #e7ded5;background:var(--paper);border-radius:22px;padding:10px 10px 16px;box-shadow:0 7px 15px rgba(47,39,51,.035);overflow:hidden;transition:transform .2s,box-shadow .2s;position:relative;cursor:pointer;min-width:0}
+.project:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.project:focus-visible{outline:3px solid #805ab2;outline-offset:3px}
+.art{height:178px;position:relative;overflow:hidden;border-radius:15px;display:flex;align-items:center;justify-content:center}
+.art.rose{background:#f3c9bf}.art.lilac{background:#dcd0f2}.art.mint{background:#cddfc9}.art.butter{background:#f5e4ae}.art.sky{background:#c9dded}
+.art::before{content:"";width:185px;height:185px;position:absolute;border-radius:44% 56% 69% 31%;border:2px dashed #ffffffa0;transform:rotate(38deg);left:-40px;top:-65px}
+.art::after{content:"";width:155px;height:155px;position:absolute;border-radius:50%;background:#fff9f444;right:-32px;bottom:-67px}
+.art-emoji{font-size:76px;filter:drop-shadow(3px 8px 0 rgba(79,65,79,.1));z-index:1;transform:rotate(-7deg)}
+.art-squiggle{position:absolute;top:11px;right:20px;color:#fff9;font-family:Georgia,serif;font-size:53px;transform:rotate(-24deg)}
+.art-picture{height:100%;width:100%;object-fit:cover;position:absolute;inset:0;z-index:2}
+.project-body{padding:13px 8px 0}
+.card-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:bold;border-radius:999px;padding:5px 9px;background:#ede3f4;color:#684d85;white-space:nowrap}
+.status.paused{background:#fae8cd;color:#916533}.status.finished{background:#e1efcc;color:#497443}
+.updated{font-size:11px;color:#968995}
+.project h3{font-family:Georgia,serif;font-size:22px;line-height:1.2;font-weight:normal;letter-spacing:-.4px;margin:12px 0 7px}
+.next{font-size:13px;color:#736778;margin:0;display:flex;align-items:start;gap:7px;min-height:39px}
+.next i{font-style:normal;color:#a884a7}
+.sample-note{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:14px 17px;background:#fff5df;border:1px dashed #d6b982;border-radius:15px;margin-bottom:22px;font-size:13px;color:#695841}
+.sample-note button{flex:none;background:none;color:#6a4d81;border:0;text-decoration:underline;font-weight:bold}
+.empty{text-align:center;grid-column:1/-1;padding:68px 18px;background:#fffcf4;border:1.5px dashed #d9cad0;border-radius:25px}
+.empty .icon{font-size:57px}.empty h3{font-family:Georgia,serif;font-size:29px;font-weight:normal;margin:10px 0 6px}.empty p{color:var(--muted);max-width:370px;margin:0 auto 17px}
+.footer{display:flex;gap:20px;justify-content:space-between;align-items:center;border-top:1px dashed #d9cdc6;padding:23px 0 45px;color:#756b74;font-size:12px;flex-wrap:wrap}
+.footer strong{font-family:Georgia,serif;font-style:italic;font-weight:normal;font-size:17px;color:#745685}
+.overlay{position:fixed;inset:0;background:#261d2b94;z-index:20;display:none;align-items:center;justify-content:center;padding:20px;overflow:auto}
+.overlay.show{display:flex}
+.modal,.drawer{background:var(--paper);box-shadow:0 30px 90px #140b175c;border:1px solid #d5cbd0}
+.modal{width:min(100%,540px);max-height:min(95vh,850px);border-radius:23px;overflow:auto;padding:24px}
+.modal-head,.drawer-head{display:flex;align-items:center;justify-content:space-between;gap:13px}
+.modal h2,.drawer h2{font-family:Georgia,serif;font-size:32px;font-weight:normal;line-height:1.1;letter-spacing:-1.1px;margin:5px 0 7px}
+.modal-intro{margin:0 0 18px;color:var(--muted);font-size:13px}
+.field{display:grid;gap:6px;margin:12px 0}.field label{font-size:12px;font-weight:bold;color:#5d4e62}.field input,.field textarea,.field select{width:100%;padding:12px;border:1.5px solid #dacfd4;background:#fffefa;border-radius:12px;color:var(--ink);min-width:0;resize:vertical}
+.field textarea{min-height:75px}.field .hint{font-size:11px;color:#877987}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;padding-top:15px}
+.file-upload{padding:12px;border:1.5px dashed #d5c9d3;border-radius:13px;background:#faf6f4;color:#716477}
+.file-upload input{border:0!important;background:none!important;padding:5px 0!important;font-size:12px}
+.drawer-wrap{position:fixed;inset:0;background:#261d2b8c;z-index:18;display:none;justify-content:flex-end}
+.drawer-wrap.show{display:flex}
+.drawer{height:100%;width:min(100%,465px);overflow:auto;padding:24px;animation:slide .19s ease-out}
+@keyframes slide{from{transform:translateX(20px);opacity:.7}to{transform:translateX(0);opacity:1}}
+.drawer-art{height:180px;border-radius:18px;margin:16px 0;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.drawer-art .art-emoji{font-size:82px}.drawer-art img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.detail-note{color:#6e6270;font-size:14px;margin:8px 0 20px;white-space:pre-wrap}
+.detail-section{border-top:1px dashed #d7cace;padding:18px 0}
+.detail-section h3{font-family:Georgia,serif;font-weight:normal;font-size:20px;margin:0 0 12px}
+.breadcrumb{background:#f2ecf8;border:1px solid #e4d7f1;border-radius:17px;padding:15px}
+.breadcrumb small{text-transform:uppercase;font-weight:bold;letter-spacing:1.5px;color:#765b91;font-size:10px}
+.breadcrumb p{font-family:Georgia,serif;font-size:20px;margin:7px 0 15px}
+.supply{display:flex;gap:10px;align-items:flex-start;padding:7px 0;font-size:14px}.supply input{width:17px;height:17px;accent-color:#7d629f;flex:none;margin-top:2px}.supply.done{color:#99909a;text-decoration:line-through}
+.detail-controls{display:flex;gap:9px;flex-wrap:wrap}.danger{color:#b04d58}
+.detail-actions{display:flex;justify-content:space-between;align-items:center;gap:7px;flex-wrap:wrap;margin-top:19px}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:40;padding:13px 19px;background:#392b45;color:white;border-radius:999px;box-shadow:0 12px 38px #0003;font-size:13px;display:none;max-width:90vw;text-align:center}.toast.show{display:block}
+.menu-wrap{position:relative}.menu{position:absolute;top:calc(100% + 7px);right:0;background:white;border:1px solid #dfd3df;box-shadow:var(--shadow);padding:6px;border-radius:14px;z-index:10;display:none;width:188px}.menu.show{display:grid}.menu button{background:none;text-align:left;border:0;border-radius:8px;padding:11px;font-size:13px;color:var(--ink)}.menu button:hover{background:#f4ecf8}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:850px){.hero{grid-template-columns:1fr .55fr}.hero-copy{padding:35px 0 36px 30px}.paper-note{transform:rotate(8deg) scale(.82)}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.site-shell{padding:0 15px}.topbar{height:76px}.brand-text{font-size:21px}.brand-mark{height:36px;width:36px;font-size:22px}.brand-sub{font-size:8px}.top-links .soft-action{display:none}.dark-btn{padding:10px 13px;font-size:12px}.hero{display:block;min-height:0;border-radius:22px}.hero-copy{padding:30px 24px 35px}.hero-copy h1{font-size:42px;letter-spacing:-1.9px}.hero-copy p{font-size:14px}.hero-visual{display:none}.section-head{align-items:start;margin-top:27px}.section-head h2{font-size:28px}.section-actions{max-width:130px}.section-actions .outline-btn{padding:9px 12px;font-size:11px}.studio-meta{margin-top:16px}.grid{grid-template-columns:1fr;gap:16px}.art{height:190px}.form-row{grid-template-columns:1fr;gap:0}.modal{padding:18px;max-height:95vh}.drawer{padding:18px}.sample-note{align-items:flex-start;flex-direction:column;gap:6px}.footer{padding-bottom:26px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="site-shell">
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Half-Finished home">
+      <span class="brand-mark" aria-hidden="true">✳</span>
+      <span><span class="brand-text">half-finished<span style="color:#9874bc">.</span></span><span class="brand-sub" style="display:block">the creative little corner</span></span>
+    </a>
+    <div class="top-links">
+      <div class="menu-wrap">
+        <button id="menuButton" class="soft-action" aria-haspopup="true" aria-expanded="false">Studio tools ▾</button>
+        <div class="menu" id="toolsMenu">
+          <button id="exportBtn">↓ Back up my projects</button>
+          <button id="importBtn">↑ Restore a backup</button>
+          <button id="resetBtn">↺ Restore examples</button>
+        </div>
+      </div>
+      <button class="dark-btn new-project">＋ Add a project</button>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow">Welcome to your creative corner</div>
+        <h1 id="hero-title">Beautiful things take <em>their own sweet time.</em></h1>
+        <p>A cozy place for the projects you love, the ideas you started, and the little steps that bring you back.</p>
+        <div class="hero-actions">
+          <button class="dark-btn new-project">＋ Start something</button>
+          <button class="outline-btn" id="surpriseBtn">✦ Pick one for me</button>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <span class="flower one">✿</span><span class="flower two">✽</span>
+        <span class="spark one">✧</span><span class="spark two">✦</span>
+        <div class="paper-note">
+          <div class="note-title">A little note to self...</div>
+          <ul class="note-list">
+            <li><span>✓</span> Start with curiosity</li>
+            <li><span>♡</span> Save the good ideas</li>
+            <li><span>✦</span> Come back whenever</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <div class="section-head">
+      <div><h2>On your worktable <span aria-hidden="true" style="color:#af91b3">✳</span></h2><p>Every little bit of progress belongs here.</p></div>
+      <div class="section-actions"><button class="outline-btn" id="surpriseBtnTwo">↝ Surprise me</button></div>
+    </div>
+    <div class="studio-meta" id="stats" aria-label="Project totals"></div>
+    <div class="sample-note" id="sampleBanner" hidden><span>✦ These are sample projects to show you around. Your studio is yours to make.</span><button id="clearSample">Clear examples</button></div>
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button class="filter" aria-pressed="true" data-filter="all">All projects</button>
+      <button class="filter" aria-pressed="false" data-filter="active">In the making</button>
+      <button class="filter" aria-pressed="false" data-filter="paused">On the shelf</button>
+      <button class="filter" aria-pressed="false" data-filter="finished">Finished ✨</button>
+    </div>
+    <div id="projects" class="grid" aria-live="polite"></div>
+  </main>
+  <footer class="footer"><strong>Slow making is still making. ♡</strong><span>Made for beautiful ideas and beautifully imperfect humans.</span></footer>
+</div>
+
+<div id="formOverlay" class="overlay" role="presentation">
+ <section class="modal" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+  <div class="modal-head"><h2 id="formTitle">A new little project ✳</h2><button class="icon-button" id="closeForm" aria-label="Close editor">×</button></div>
+  <p class="modal-intro">One little breadcrumb is enough. You can fill in the rest later.</p>
+  <form id="projectForm">
+    <input type="hidden" id="editId">
+    <div class="field"><label for="titleInput">What are you making? *</label><input id="titleInput" required maxlength="90" placeholder="e.g. The thrifted flower ottoman"></div>
+    <div class="form-row">
+      <div class="field"><label for="categoryInput">Kind of project</label><select id="categoryInput"><option>Home & DIY</option><option>Sewing & fabric</option><option>Art & crafts</option><option>Jewelry</option><option>Garden</option><option>Something else</option></select></div>
+      <div class="field"><label for="statusInput">Where's it at?</label><select id="statusInput"><option value="active">In the making</option><option value="paused">On the shelf</option><option value="finished">Finished!</option></select></div>
+    </div>
+    <div class="field"><label for="nextInput">What's the very next tiny step?</label><input id="nextInput" maxlength="160" placeholder="e.g. Find the fabric scissors"></div>
+    <div class="field"><label for="notesInput">A note to future you (optional)</label><textarea id="notesInput" maxlength="3000" placeholder="Where you left off, your idea, what worked..."></textarea></div>
+    <div class="field"><label for="suppliesInput">Supplies (one per line, optional)</label><textarea id="suppliesInput" maxlength="2000" rows="3" placeholder="Fabric\nScissors\nSewing thread"></textarea></div>
+    <div class="form-row">
+      <div class="field"><label for="emojiInput">Pick a little icon</label><select id="emojiInput"><option>🧵</option><option>🛋️</option><option>🪄</option><option>🌿</option><option>🎨</option><option>💍</option><option>🧶</option><option>🪴</option><option>🛠️</option><option>✨</option><option>🌙</option><option>✂️</option><option>🧺</option><option>🎀</option></select></div>
+      <div class="field"><label for="colorInput">Project color</label><select id="colorInput"><option value="rose">Peachy rose</option><option value="lilac">Soft lavender</option><option value="mint">Garden mint</option><option value="butter">Butter yellow</option><option value="sky">Blue sky</option></select></div>
+    </div>
+    <div class="field"><label for="photoInput">Project photo (optional)</label><div class="file-upload"><input id="photoInput" type="file" accept="image/*"><div class="hint" id="photoHint">A small photo is saved on this device.</div></div></div>
+    <div class="form-actions"><button type="button" class="ghost-btn" id="cancelForm">Not right now</button><button class="dark-btn" type="submit">♡ Save my project</button></div>
+  </form>
+ </section>
+</div>
+
+<div id="drawerWrap" class="drawer-wrap" role="presentation">
+ <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+  <div class="drawer-head"><span class="eyebrow" style="letter-spacing:1.5px">Your project notebook</span><button class="icon-button" id="closeDrawer" aria-label="Close project">×</button></div>
+  <div id="drawerContent"></div>
+ </aside>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<input type="file" id="backupPicker" accept="application/json,.json" hidden>
+<script>
+(()=>{'use strict';
+const KEY='half-finished-v1-projects';
+const DEMOS=[
+ {id:'demo-1',title:'The patchwork cushion',category:'Sewing & fabric',status:'active',next:'Choose three fabrics that make you smile',notes:'A little bit vintage, a little bit wild. The kind you want to hug.',supplies:[{id:'s1',text:'Favorite fabric scraps',done:true},{id:'s2',text:'Pillow insert',done:false},{id:'s3',text:'Matching thread',done:false}],emoji:'🧵',color:'rose',photo:null,demo:true},
+ {id:'demo-2',title:'Moon & stars bookshelf',category:'Home & DIY',status:'paused',next:'Measure the space above the shelf',notes:'Save the star-shaped cutouts for the top edge.',supplies:[{id:'s4',text:'Wood glue',done:true},{id:'s5',text:'Sandpaper',done:false},{id:'s6',text:'Little paintbrush',done:false}],emoji:'🌙',color:'lilac',photo:null,demo:true},
+ {id:'demo-3',title:'The windowsill garden',category:'Garden',status:'active',next:'Repot the little fern',notes:'Keep it somewhere with gentle morning light.',supplies:[{id:'s7',text:'Small terracotta pot',done:true},{id:'s8',text:'Potting mix',done:false}],emoji:'🌿',color:'mint',photo:null,demo:true}
+];
+let projects=[],filter='all',openId=null,editingId=null,photoPending=null,restoreFocus=null;
+let toastTimeout=null;
+const $=s=>document.querySelector(s),$$=s=>Array.from(document.querySelectorAll(s));
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const id=()=>typeof crypto!=='undefined'&&crypto.randomUUID?crypto.randomUUID():'p'+Date.now()+Math.random().toString(36).slice(2);
+const date=()=>new Date().toISOString();
+const colors=['rose','lilac','mint','butter','sky'];
+const statuses={active:'In the making',paused:'On the shelf',finished:'Finished!'};
+projects=load();
+const get=p=>projects.find(x=>x.id===p);
+function load(){try{const raw=localStorage.getItem(KEY);return raw===null?DEMOS.map(d=>({...d,createdAt:date(),updatedAt:date(),history:[]})):normalize(JSON.parse(raw));}catch(e){return DEMOS.map(d=>({...d,createdAt:date(),updatedAt:date(),history:[]}));}}
+function normalize(obj){if(!Array.isArray(obj))throw Error('Not a project list');return obj.slice(0,300).filter(x=>x&&typeof x==='object').map(x=>({id:String(x.id||id()).slice(0,100),title:String(x.title||'Untitled project').slice(0,90),category:String(x.category||'Something else').slice(0,80),status:['active','paused','finished'].includes(x.status)?x.status:'active',next:String(x.next||'').slice(0,160),notes:String(x.notes||'').slice(0,3000),emoji:String(x.emoji||'✨').slice(0,10),color:colors.includes(x.color)?x.color:'rose',photo:typeof x.photo==='string'&&/^data:image\/(png|jpeg|webp);base64,/.test(x.photo)&&x.photo.length<900000?x.photo:null,supplies:Array.isArray(x.supplies)?x.supplies.slice(0,100).filter(y=>y&&typeof y.text==='string').map(y=>({id:String(y.id||id()),text:y.text.slice(0,150),done:!!y.done})):[],history:Array.isArray(x.history)?x.history.slice(-50).map(h=>({message:String(h.message||'').slice(0,300),date:String(h.date||date())})):[],demo:!!x.demo,createdAt:String(x.createdAt||date()),updatedAt:String(x.updatedAt||date())}));}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(projects));return true;}catch(e){notice('Storage is full. Please back up your projects and try a smaller photo.');return false;}}
+function notice(msg){const el=$('#toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>el.classList.remove('show'),4300);}
+function timeAgo(s){const t=new Date(s).getTime();if(!Number.isFinite(t))return 'recently';const days=Math.floor((Date.now()-t)/86400000);return days<=0?'today':days===1?'yesterday':days<14?days+' days ago':new Date(t).toLocaleDateString(undefined,{month:'short',day:'numeric'});}
+function image(p){return p.photo?'<img class="art-picture" src="'+esc(p.photo)+'" alt="Project photo">':'<span class="art-squiggle">✧</span><span class="art-emoji" aria-hidden="true">'+esc(p.emoji)+'</span>';}
+function draw(){const n={active:0,paused:0,finished:0};for(const p of projects)n[p.status]++;
+ $('#stats').innerHTML='<span class="meta-pill"><i class="meta-dot"></i><strong>'+n.active+'</strong> in the making</span><span class="meta-pill"><i class="meta-dot paused"></i><strong>'+n.paused+'</strong> on the shelf</span><span class="meta-pill"><i class="meta-dot finished"></i><strong>'+n.finished+'</strong> finished</span>';
+ $$('.filter').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===filter)));
+ $('#sampleBanner').hidden=!projects.some(p=>p.demo);
+ const data=projects.filter(p=>filter==='all'||p.status===filter).sort((a,b)=>(b.updatedAt||'').localeCompare(a.updatedAt||''));
+ $('#projects').innerHTML=data.length?data.map(p=>'<article class="project" tabindex="0" role="button" aria-label="Open '+esc(p.title)+'" data-id="'+esc(p.id)+'"><div class="art '+p.color+'">'+image(p)+'</div><div class="project-body"><div class="card-top"><span class="status '+p.status+'">'+(p.status==='active'?'✳ ':p.status==='paused'?'☕ ':'✦ ')+statuses[p.status]+'</span><span class="updated">'+timeAgo(p.updatedAt)+'</span></div><h3>'+esc(p.title)+'</h3><p class="next"><i>↝</i> '+esc(p.next||(p.status==='finished'?'You made a thing!':'Leave yourself a next step'))+'</p></div></article>').join(''):'<div class="empty"><div class="icon">🪄</div><h3>'+ (filter==='all'?'A little room for new ideas':'Nothing on this shelf yet')+'</h3><p>'+(filter==='all'?'Your next beautiful, unfinished thing can live right here.':'Try another shelf or add a new project.')+'</p><button class="dark-btn new-project">＋ Add a project</button></div>';
+ $$('#projects .project').forEach(el=>{el.addEventListener('click',()=>openProject(el.dataset.id));el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProject(el.dataset.id);}});});
+ $$('#projects .new-project').forEach(el=>el.addEventListener('click',()=>showForm()));
+}
+function showForm(p=null){restoreFocus=document.activeElement;editingId=p?.id||null;photoPending=p?.photo||null;$('#formTitle').textContent=p?'A little project update ✳':'A new little project ✳';$('#editId').value=p?.id||'';$('#titleInput').value=p?.title||'';$('#categoryInput').value=p?.category||'Home & DIY';$('#statusInput').value=p?.status||'active';$('#nextInput').value=p?.next||'';$('#notesInput').value=p?.notes||'';$('#suppliesInput').value=p?.supplies.map(s=>(s.done?'✓ ':'')+s.text).join('\n')||'';$('#emojiInput').value=p?.emoji||'🧵';if(!$('#emojiInput').value)$('#emojiInput').value='✨';$('#colorInput').value=p?.color||'rose';$('#photoInput').value='';$('#photoHint').textContent=p?.photo?'Existing photo will be kept unless you select another.':'A small photo is saved on this device.';$('#formOverlay').classList.add('show');document.body.style.overflow='hidden';setTimeout(()=>$('#titleInput').focus(),10);}
+function closeForm(){if(!$('#formOverlay').classList.contains('show'))return;$('#formOverlay').classList.remove('show');document.body.style.overflow='';if(restoreFocus?.focus)restoreFocus.focus();}
+function openProject(projectId){const p=get(projectId);if(!p)return;restoreFocus=document.activeElement;openId=projectId;$('#drawerWrap').classList.add('show');document.body.style.overflow='hidden';renderDrawer();$('#closeDrawer').focus();}
+function closeDrawer(){if(!$('#drawerWrap').classList.contains('show'))return;$('#drawerWrap').classList.remove('show');document.body.style.overflow='';openId=null;if(restoreFocus?.focus)restoreFocus.focus();}
+function renderDrawer(){const p=get(openId);if(!p){closeDrawer();return;}
+ const supplies=p.supplies.length?p.supplies.map(s=>'<label class="supply '+(s.done?'done':'')+'"><input type="checkbox" data-supply="'+esc(s.id)+'" '+(s.done?'checked':'')+'><span>'+esc(s.text)+'</span></label>').join(''):'<p class="detail-note">No supplies added yet. Keep it simple.</p>';
+ $('#drawerContent').innerHTML='<div class="drawer-art art '+p.color+'">'+image(p)+'</div><span class="status '+p.status+'">'+statuses[p.status]+'</span><h2 id="drawerTitle">'+esc(p.title)+'</h2><p class="detail-note">'+esc(p.notes||'Every great project starts somewhere.')+'</p><div class="detail-section"><div class="breadcrumb"><small>↝ Your next tiny step</small><p>'+esc(p.next||'Give future-you a tiny step to pick up from.')+'</p><div class="detail-controls"><button class="outline-btn" id="doneStep" '+(!p.next?'disabled':'')+'>✓ I did this</button><button class="ghost-btn" id="editStep">Edit step ↗</button></div></div></div><div class="detail-section"><h3>Little things you need ('+p.supplies.filter(s=>s.done).length+'/'+p.supplies.length+')</h3>'+supplies+'</div><div class="detail-section"><h3>Move this project to…</h3><div class="detail-controls"><button class="outline-btn" data-status="active" '+(p.status==='active'?'disabled':'')+'>✳ In the making</button><button class="outline-btn" data-status="paused" '+(p.status==='paused'?'disabled':'')+'>☕ On the shelf</button><button class="outline-btn" data-status="finished" '+(p.status==='finished'?'disabled':'')+'>✦ Finished!</button></div></div>'+(p.history?.length?'<div class="detail-section"><h3>Little wins</h3>'+p.history.slice(-4).reverse().map(h=>'<p style="font-size:13px;color:#746876;margin:8px 0">✧ '+esc(h.message)+' <small>· '+timeAgo(h.date)+'</small></p>').join('')+'</div>':'')+'<div class="detail-actions"><button id="editProject" class="dark-btn">✎ Edit project</button><button id="deleteProject" class="ghost-btn danger">Delete project</button></div>';
+ $$('#drawerContent [data-supply]').forEach(el=>el.addEventListener('change',()=>{const s=p.supplies.find(x=>x.id===el.dataset.supply);if(s){s.done=el.checked;p.updatedAt=date();p.demo=false;save();draw();renderDrawer();}}));
+ $$('#drawerContent [data-status]').forEach(el=>el.addEventListener('click',()=>{p.status=el.dataset.status;p.updatedAt=date();p.demo=false;if(p.status==='finished')p.history.push({message:'Finished this project! 🎉',date:date()});save();draw();renderDrawer();notice(p.status==='finished'?'You made a thing! ✨':'Project moved. There’s no rush.');}));
+ $('#doneStep').addEventListener('click',()=>{if(!p.next)return;p.history.push({message:'Completed: '+p.next,date:date()});p.next='';p.updatedAt=date();p.demo=false;save();draw();renderDrawer();notice('Tiny progress is still progress. ✦');});
+ $('#editStep').addEventListener('click',()=>{closeDrawer();showForm(p);setTimeout(()=>$('#nextInput').focus(),20);});
+ $('#editProject').addEventListener('click',()=>{closeDrawer();showForm(p);});
+ $('#deleteProject').addEventListener('click',()=>{if(confirm('Delete “'+p.title+'”? This cannot be undone unless you have a backup.')){projects=projects.filter(x=>x.id!==p.id);save();closeDrawer();draw();notice('Project deleted.');}});
+}
+async function compress(file){return new Promise((resolve,reject)=>{if(!file.type.startsWith('image/'))return reject(Error('Select an image file.'));if(file.size>18*1024*1024)return reject(Error('Choose an image smaller than 18 MB.'));const img=new Image(),url=URL.createObjectURL(file);img.onload=()=>{URL.revokeObjectURL(url);const r=Math.min(1,850/Math.max(img.width,img.height));const c=document.createElement('canvas');c.width=Math.round(img.width*r);c.height=Math.round(img.height*r);try{c.getContext('2d').drawImage(img,0,0,c.width,c.height);resolve(c.toDataURL('image/jpeg',.69));}catch(e){reject(e);}};img.onerror=()=>{URL.revokeObjectURL(url);reject(Error('Could not open that image.'));};img.src=url;});}
+$('#photoInput').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;$('#photoHint').textContent='Preparing your photo…';try{photoPending=await compress(f);$('#photoHint').textContent='Photo ready ♡';}catch(err){photoPending=null;$('#photoHint').textContent='Could not use this photo.';notice(err.message);}});
+$('#projectForm').addEventListener('submit',e=>{e.preventDefault();const title=$('#titleInput').value.trim();if(!title)return;const old=editingId?get(editingId):null;
+ const oldDone=new Map((old?.supplies||[]).map(s=>[s.text.toLowerCase(),s.done]));
+ const supplies=$('#suppliesInput').value.split('\n').map(x=>x.trim()).filter(Boolean).slice(0,100).map(line=>({id:id(),text:line.replace(/^✓\s*/,''),done:line.startsWith('✓ ')||!!oldDone.get(line.toLowerCase())}));
+ const now=date();const p={id:old?.id||id(),title,category:$('#categoryInput').value,status:$('#statusInput').value,next:$('#nextInput').value.trim(),notes:$('#notesInput').value.trim(),supplies,emoji:$('#emojiInput').value,color:$('#colorInput').value,photo:photoPending,createdAt:old?.createdAt||now,updatedAt:now,history:old?.history||[],demo:false};
+ if(old){projects=projects.map(x=>x.id===old.id?p:x);}else projects.unshift(p);
+ if(!save()){if(old)projects=projects.map(x=>x.id===old.id?old:x);else projects=projects.filter(x=>x.id!==p.id);return;}
+ closeForm();filter='all';draw();notice(old?'Your project is updated ♡':'A little place for your big idea! ♡');});
+$$('.new-project').forEach(el=>el.addEventListener('click',()=>showForm()));
+$$('.filter').forEach(el=>el.addEventListener('click',()=>{filter=el.dataset.filter;draw();}));
+function surprise(){const choices=projects.filter(p=>p.status!=='finished');if(!choices.length){notice('Add a project and we’ll help you find your next step!');return;}const pick=choices[Math.floor(Math.random()*choices.length)];openProject(pick.id);}
+$('#surpriseBtn').addEventListener('click',surprise);$('#surpriseBtnTwo').addEventListener('click',surprise);
+$('#closeForm').addEventListener('click',closeForm);$('#cancelForm').addEventListener('click',closeForm);$('#closeDrawer').addEventListener('click',closeDrawer);
+$('#formOverlay').addEventListener('click',e=>{if(e.target.id==='formOverlay')closeForm();});$('#drawerWrap').addEventListener('click',e=>{if(e.target.id==='drawerWrap')closeDrawer();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeForm();closeDrawer();$('#toolsMenu').classList.remove('show');}});
+$('#clearSample').addEventListener('click',()=>{projects=projects.filter(p=>!p.demo);if(save()){draw();notice('Your studio is ready for your ideas!');}});
+$('#menuButton').addEventListener('click',()=>{const shown=$('#toolsMenu').classList.toggle('show');$('#menuButton').setAttribute('aria-expanded',String(shown));});
+function hideMenu(){$('#toolsMenu').classList.remove('show');$('#menuButton').setAttribute('aria-expanded','false');}
+$('#exportBtn').addEventListener('click',()=>{hideMenu();const blob=new Blob([JSON.stringify({app:'Half-Finished',version:1,exportedAt:date(),projects},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='half-finished-backup-'+new Date().toISOString().slice(0,10)+'.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);notice('Backup downloaded ♡');});
+$('#importBtn').addEventListener('click',()=>{hideMenu();$('#backupPicker').click();});
+$('#backupPicker').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>35*1024*1024)throw Error('Backup file is too large.');const content=JSON.parse(await f.text());if(content.app!=='Half-Finished'||!Array.isArray(content.projects))throw Error('That doesn’t look like a Half-Finished backup.');const clean=normalize(content.projects);if(!confirm('Replace the projects on this device with '+clean.length+' projects from this backup?'))return;const previous=projects;projects=clean;if(!save()){projects=previous;return;}filter='all';draw();notice('Your projects are back! ♡');}catch(err){notice(err.message||'Could not restore backup.');}finally{e.target.value='';}});
+$('#resetBtn').addEventListener('click',()=>{hideMenu();if(!confirm('Replace your current projects with the three examples? Export a backup first if you want to keep them.'))return;const original=projects;projects=DEMOS.map(p=>({...p,createdAt:date(),updatedAt:date(),history:[]}));if(!save()){projects=original;return;}filter='all';draw();notice('Examples restored.');});
+document.addEventListener('click',e=>{if(!e.target.closest('.menu-wrap'))hideMenu();});
+draw();
+})();
+</script>
+</body>
+</html>
