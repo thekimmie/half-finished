@@ -1,0 +1,152 @@
+/* HALF-FINISHED — The Wild Little Studio edition
+   Inspired by the maker's Wild Rumpus Agenda creative world:
+   fuchsia heirloom-key motifs, curiosities, storybook typography and an inky atelier.
+   Purely presentational; project data and functionality remain untouched. */
+:root {
+  --ink:#29202d; --muted:#665d63; --cream:#fff9ed; --paper:#fffdf7;
+  --purple:#a51362; --lavender:#f6d8e8; --lime:#d8e67c;
+  --peach:#ffcaa4; --coral:#f0678f; --stroke:#dbcdbb;
+  --pink:#f3218d; --gold:#e7ba62; --deep:#282031; --teal:#116c67;
+  --shadow:0 11px 0 rgba(48,31,47,.06),0 16px 36px rgba(58,28,42,.09);
+}
+html{scroll-behavior:smooth}
+body {
+  background-color:var(--cream);
+  background-image:radial-gradient(#efb8d2 0.7px,transparent 0.8px),linear-gradient(145deg,#fff9ed 0%,#fff7ea 55%,#f9e9de 100%);
+  background-size:25px 25px,100% 100%;
+  color:var(--ink);
+}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,.project:focus-visible{outline-color:var(--pink)}
+.site-shell{max-width:1210px}
+.topbar{height:103px;position:relative}
+.topbar::after{content:"";position:absolute;left:0;right:0;bottom:7px;border-bottom:1.5px solid #38243950}
+.brand-mark{
+  border-radius:50%;width:52px;height:52px;box-shadow:none;
+  border:1.5px solid #eab3d3;background:#ffebf4;transform:rotate(-12deg);
+  overflow:hidden;display:grid;place-items:center;
+}
+.brand-mark img{width:47px;height:47px;object-fit:contain;transform:rotate(26deg)}
+.brand-text{font-family:Georgia,"Palatino Linotype",serif;font-weight:bold;letter-spacing:-1.8px;font-size:30px}
+.brand-sub{font-family:Georgia,serif;font-style:italic;font-size:11px;letter-spacing:.5px;text-transform:none;color:#a12370}
+.brand-text .brand-dot{color:var(--pink)}
+.soft-action{background:#f7e5df;border:1px solid #e9c4c8;color:#633c50}
+.soft-action:hover{background:#f6d3de}
+.dark-btn{
+  border:1.5px solid #211a26;color:white;background:var(--pink);
+  box-shadow:4px 4px 0 #3e2437;border-radius:8px 22px 9px 22px;
+  padding:12px 19px;font-weight:800;letter-spacing:.1px;
+}
+.dark-btn:hover{background:#d81579;transform:translate(-1px,-2px);box-shadow:6px 6px 0 #3e2437}
+.outline-btn{border:1.5px solid #504253;background:#fff6e7;border-radius:22px 9px 22px 9px;box-shadow:3px 3px 0 #f5d7d4}
+.outline-btn:hover{background:#ffe2ee}
+.ghost-btn:hover{background:#fae4ec}
+.hero{
+  background:#28202e;
+  border:2px solid #402d3b;
+  border-radius:30px 11px 32px 12px;
+  box-shadow:8px 9px 0 #f5b8cf,12px 14px 0 #2c2530;
+  min-height:355px;
+  grid-template-columns:1.3fr .82fr;
+  margin:6px 14px 24px 0;
+}
+.hero:before{content:"";position:absolute;inset:0;width:auto;height:auto;top:auto;right:auto;border:0;border-radius:0;z-index:-1;opacity:.9;
+ background:radial-gradient(circle at 15% 17%,#f1aa60 0 2px,transparent 3px),radial-gradient(circle at 67% 65%,#f5c06d 0 2px,transparent 3px),radial-gradient(circle at 90% 10%,#e264ad 0 2px,transparent 3px),repeating-radial-gradient(circle at 84% 37%,transparent 0 43px,#ffaac91a 44px 45px,transparent 47px 73px);
+}
+.hero:after{content:"✦  ·  ✧  ·  ✦";width:auto;height:auto;top:12px;right:20px;bottom:auto;border:0;color:#eebf78;letter-spacing:20px;font-size:19px;opacity:1}
+.hero-copy{padding:53px 5px 49px 55px}
+.eyebrow{color:#ffc578;letter-spacing:2.3px;font-size:11px;text-transform:uppercase}
+.eyebrow::before{width:34px;background:#ff5ca5;height:2px}
+h1{font-family:"Palatino Linotype","Book Antiqua",Georgia,serif;color:#fff5de;font-size:clamp(40px,4.6vw,63px);letter-spacing:-2.1px;line-height:1.12;margin:20px 0 18px}
+h1 em{color:#ff6aaf;text-shadow:1px 2px #6d2e60;letter-spacing:-2px}
+.hero-copy p{color:#f4d8e6;font-size:16px;max-width:470px}
+.hero .dark-btn{background:#f3248e}
+.hero .outline-btn{background:#fff2dc;color:#332033}
+.hero-visual{padding:28px 22px 26px;min-height:350px;isolation:isolate}
+.hero-visual::before{content:"";position:absolute;width:280px;height:280px;border:1.5px dashed #ffcc8f70;border-radius:48% 52% 49% 51%;transform:rotate(15deg)}
+.curiosity-frame{
+ width:230px;min-height:274px;z-index:1;position:relative;display:flex;align-items:center;flex-direction:column;justify-content:center;
+ border:2px solid #d6ad60;background:radial-gradient(circle at 50% 41%,#613650 0%,#3c2a3e 60%,#332537 100%);
+ border-radius:112px 112px 16px 16px;box-shadow:0 0 0 7px #42293e,0 0 0 9px #bc8c6b,10px 17px 0 #110d1690;
+ transform:rotate(5deg);text-align:center;padding:23px 15px;
+}
+.curiosity-frame::before{content:"✧";position:absolute;top:-23px;left:50%;transform:translateX(-50%);color:#ffb9d4;font-size:32px}
+.curiosity-frame:after{content:"";position:absolute;inset:14px;border:1px dotted #d3a3748c;border-radius:98px 98px 8px 8px;pointer-events:none}
+.curiosity-label{font-family:Georgia,serif;text-transform:uppercase;letter-spacing:2.5px;font-size:9px;font-weight:bold;color:#f4cb94;margin:4px 0 10px}
+.curiosity-frame img{width:170px;height:151px;transform:rotate(-33deg);object-fit:contain;filter:drop-shadow(5px 9px 0 #19101a80)}
+.curiosity-caption{font-family:Georgia,serif;font-style:italic;font-size:17px;color:#ffe2b9;margin-top:11px;line-height:1.1}
+.cabinet-star{position:absolute;color:#ffc875;z-index:2;font-size:34px}
+.cabinet-star.a{left:4%;top:10%;transform:rotate(14deg)}
+.cabinet-star.b{right:5%;bottom:8%;font-size:45px;color:#fd65ae}
+.cabinet-star.c{left:11%;bottom:16%;color:#fd65ae;font-size:24px}
+.section-head{margin-top:47px}
+.section-head h2,.empty h3,.modal h2,.drawer h2{font-family:"Palatino Linotype","Book Antiqua",Georgia,serif;letter-spacing:-1.5px}
+.section-head h2{font-size:37px;font-weight:bold}
+.section-head h2:before{content:"✦";color:var(--pink);font-size:21px;margin-right:12px;vertical-align:middle}
+.section-head h2 span{color:#bc3c85!important}
+.section-head p{font-family:Georgia,serif;font-style:italic;font-size:15px;color:#685565}
+.meta-pill{border-color:#dbbccd;background:#fffdf5;border-radius:7px 15px 7px 15px;box-shadow:2px 2px 0 #f0d6d0;color:#583b52}
+.meta-dot{background:#d72a87}.meta-dot.paused{background:#bb883e}.meta-dot.finished{background:#0e7971}
+.filter{border-radius:6px 18px 6px 18px;font-size:13px;color:#69485b}
+.filter[aria-pressed="true"]{background:var(--deep);color:#ffe7b4;box-shadow:3px 3px 0 #ec9bc1}
+.filter:hover:not([aria-pressed="true"]){background:#f5d3e0}
+.grid{gap:25px}
+.project{border:1.5px solid #4e3343;border-radius:12px 25px 11px 25px;background:#fffdf6;padding:10px 10px 17px;box-shadow:5px 6px 0 #eed0d7;}
+.project:nth-child(3n+2){box-shadow:5px 6px 0 #e4b6ce}
+.project:nth-child(3n+3){box-shadow:5px 6px 0 #e5d0a1}
+.project:hover{transform:translateY(-5px) rotate(-.4deg);box-shadow:7px 11px 0 #e9bad0}
+.art{border-radius:7px 19px 6px 18px;border:1px solid #fff9}
+.art.rose{background:#f3a4b4}
+.art.lilac{background:#d0a6d6}
+.art.mint{background:#9fd1b4}
+.art.butter{background:#f4cb73}
+.art.sky{background:#8fbbd3}
+.art::before{border-color:#fff8e7b5}
+.art::after{background:#fffbf733}
+.art-emoji{filter:drop-shadow(4px 8px 0 #482a3760)}
+.status{background:#fbe1ed;color:#912058;border:1px solid #ecc0d4}
+.status.paused{background:#f9e8bf;color:#805323;border-color:#ead09d}
+.status.finished{background:#d2ebe0;color:#135b51;border-color:#add5bd}
+.project h3{font-family:"Palatino Linotype","Book Antiqua",Georgia,serif;font-weight:bold;font-size:24px}
+.next{color:#65545f}
+.next i{color:var(--pink)}
+.sample-note{background:#fff0d6;border:1.5px dashed #bc7c79;color:#654544;border-radius:9px 19px 7px 18px}
+.sample-note button{color:#ae2168}
+.empty{background:#fff8eb;border-color:#c97aa6}
+.footer{border-top:1px solid #cdb2b2}
+.footer strong{color:#a72270}
+.modal,.drawer{background:#fff9ed;border:2px solid #6e4762}
+.modal{border-radius:12px 29px 12px 29px}
+.modal h2,.drawer h2{font-weight:bold}
+.field label{color:#733454}
+.field input,.field textarea,.field select{background:#fffdf8;border-color:#d3a6ba;border-radius:9px}
+.file-upload{border-color:#c581a0;background:#fff2ef}
+.breadcrumb{background:#ffe8f1;border-color:#e9adc8}
+.breadcrumb small{color:#a91e6e}
+.supply input{accent-color:#d92786}
+.detail-section{border-color:#b7a3a5}
+.menu{border-color:#d7a6bf;background:#fffaf0}
+.menu button:hover{background:#fce2ee}
+.toast{background:#2b2030;border:1px solid #f3b2cc}
+@media(max-width:850px){.hero{grid-template-columns:1fr .72fr}.hero-copy{padding:43px 8px 42px 32px}.curiosity-frame{transform:rotate(4deg) scale(.87)}}
+@media(max-width:620px){
+ .topbar{height:83px}.topbar::after{bottom:2px}.brand-mark{height:39px;width:39px}.brand-mark img{width:39px;height:39px}.brand-text{font-size:22px}.brand-sub{font-size:9px}
+ .top-links .dark-btn{font-size:11px;max-width:144px;padding:10px}
+ .hero{margin:12px 8px 18px 0;display:block;border-radius:19px 7px 20px 7px;box-shadow:5px 6px 0 #f5b8cf,8px 9px 0 #2c2530}
+ .hero-copy{padding:31px 25px 10px}
+ .hero-copy h1{font-size:clamp(36px,9vw,48px);letter-spacing:-1.4px}
+ .hero-copy p{font-size:14px;margin-bottom:18px}
+ .hero-visual{display:flex;min-height:225px;padding:10px 25px 27px}
+ .hero-visual::before{width:190px;height:190px}
+ .curiosity-frame{transform:rotate(5deg) scale(.68);margin:-35px 0}
+ .cabinet-star.a{left:12%;top:9%}.cabinet-star.b{right:10%;bottom:10%}
+ .section-head{margin-top:31px}.section-head h2{font-size:28px}.section-head h2::before{font-size:16px;margin-right:5px}
+ .grid{gap:18px}.project{box-shadow:4px 5px 0 #eed0d7}
+ .art{height:182px}
+}
+/* Keep backups accessible on a phone even when the header gets compact. */
+@media(max-width:620px){
+  .top-links{gap:8px}
+  .top-links .soft-action{display:grid;place-items:center;width:37px;height:37px;padding:0;font-size:0;border-radius:50%}
+  .top-links .soft-action::before{content:"⋯";font-size:24px;line-height:1;color:#6c3755}
+  .section-actions{display:none}
+}
