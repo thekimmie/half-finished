@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-labelledby="keytitle"><title id="keytitle">An ornate fuchsia storybook key</title>
+<defs><linearGradient id="rose" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff92c4"/><stop offset=".55" stop-color="#ff258e"/><stop offset="1" stop-color="#c90a74"/></linearGradient></defs>
+<g stroke="#611339" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="url(#rose)">
+<!-- ornamental key bow -->
+<path d="M70 42 C37 20 16 57 36 81 C9 104 30 137 62 128 C73 154 117 152 126 120 C150 113 150 86 128 74 C143 45 110 18 88 37 C85 39 77 42 70 42Z"/>
+<path d="M78 57 C58 38 44 59 53 74 C35 88 51 107 68 100 C80 120 99 105 99 91 C119 84 109 61 91 67 C90 62 85 57 78 57Z" fill="#37253a" stroke="#f5b875" stroke-width="4"/>
+<path d="M74 68 C67 62 63 70 67 76 M94 87 C95 96 82 103 77 96" fill="none" stroke="#ffb3d1" stroke-width="3"/>
+<!-- collar and long shaft -->
+<path d="M116 96 L214 149 L202 172 L107 118 Z"/>
+<path d="M128 96 L133 88 L150 97 L145 105" fill="#f5af5b"/>
+<path d="M126 118 L203 161" fill="none" stroke="#ffd0e6" stroke-width="3"/>
+<!-- key bit with distinctive teeth -->
+<path d="M198 148 L238 172 L222 200 L207 191 L215 178 L200 171 L188 191 L176 184 L188 161Z"/>
+<path d="M218 185 L235 196 L226 211 L208 199Z"/>
+</g>
+<g fill="#ffe5a5" stroke="#5b274e" stroke-width="2"><circle cx="75" cy="111" r="4"/><circle cx="42" cy="91" r="3"/><circle cx="121" cy="58" r="3"/></g>
+<path d="M13 164 L19 178 L33 184 L19 190 L13 204 L7 190 L-7 184 L7 178Z" transform="translate(17 -8)" fill="#ffcc77"/>
+<path d="M211 51 L216 62 L226 66 L216 71 L211 82 L207 71 L196 66 L207 62Z" fill="#ffa9d4"/>
+</svg>
