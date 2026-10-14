@@ -1,13 +1,24 @@
 {
-  "name": "Half-Finished — Your creative little corner",
+  "name": "Half-Finished \u2014 The Wild Little Studio",
   "short_name": "Half-Finished",
-  "description": "Pick up where you left off.",
+  "description": "Creativity has no time limit. Pick up where you left off.",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#151116",
-  "theme_color": "#ea4b5f",
+  "background_color": "#0F6065",
+  "theme_color": "#0F6065",
   "icons": [
-    {"src":"wildrumpus-key-widget.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
-    {"src":"wildrumpus-key-appicon.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+    {
+      "src": "wildrumpus-touch-icon-v05.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "wildrumpus-app-icon-v05.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
   ]
 }

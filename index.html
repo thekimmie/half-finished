@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#ea4b5f">
+  <meta name="theme-color" content="#0F6065">
   <meta name="description" content="A gentle home for your unfinished creative projects. Pick up where you left off.">
   <meta name="color-scheme" content="light">
-  <link rel="icon" href="favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="wildrumpus-key-widget.png">
+  <link rel="icon" href="wildrumpus-favicon-v05.png?v=5" type="image/png">
+  <link rel="apple-touch-icon" href="wildrumpus-touch-icon-v05.png?v=5">
   <link rel="manifest" href="manifest.webmanifest">
   <title>Half-Finished — The Wild Little Studio</title>
 <style>
@@ -134,13 +134,13 @@ h1 em{font-style:italic;color:#805ea5}
 @media(max-width:620px){.site-shell{padding:0 15px}.topbar{height:76px}.brand-text{font-size:21px}.brand-mark{height:36px;width:36px;font-size:22px}.brand-sub{font-size:8px}.top-links .soft-action{display:none}.dark-btn{padding:10px 13px;font-size:12px}.hero{display:block;min-height:0;border-radius:22px}.hero-copy{padding:30px 24px 35px}.hero-copy h1{font-size:42px;letter-spacing:-1.9px}.hero-copy p{font-size:14px}.hero-visual{display:none}.section-head{align-items:start;margin-top:27px}.section-head h2{font-size:28px}.section-actions{max-width:130px}.section-actions .outline-btn{padding:9px 12px;font-size:11px}.studio-meta{margin-top:16px}.grid{grid-template-columns:1fr;gap:16px}.art{height:190px}.form-row{grid-template-columns:1fr;gap:0}.modal{padding:18px;max-height:95vh}.drawer{padding:18px}.sample-note{align-items:flex-start;flex-direction:column;gap:6px}.footer{padding-bottom:26px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
 </style>
-<link rel="stylesheet" href="studio-theme.css?v=4">
+<link rel="stylesheet" href="studio-theme.css?v=5">
 </head>
 <body>
 <div class="site-shell">
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Half-Finished home">
-      <span class="brand-mark" aria-hidden="true"><img src="wildrumpus-key-upright.png" alt=""></span>
+      <span class="brand-mark" aria-hidden="true"><img src="wildrumpus-key-upright-v05.png" width="1002" height="2633" alt=""></span>
       <span><span class="brand-text">half-finished<span class="brand-dot">.</span></span><span class="brand-sub" style="display:block">the wild little studio</span></span>
     </a>
     <div class="top-links">
@@ -152,7 +152,7 @@ h1 em{font-style:italic;color:#805ea5}
           <button id="resetBtn">↺ Restore examples</button>
         </div>
       </div>
-      <button class="dark-btn new-project">＋ Add a project</button>
+      <button class="dark-btn new-project" aria-label="Add a project">＋ Add a project</button>
     </div>
   </header>
   <main id="top">
@@ -170,7 +170,7 @@ h1 em{font-style:italic;color:#805ea5}
         <span class="cabinet-star a">✧</span><span class="cabinet-star b">✺</span><span class="cabinet-star c">✦</span>
         <div class="curiosity-frame">
           <span class="curiosity-label">A pocketful of possibilities</span>
-          <img src="wildrumpus-key-upright.png" alt="">
+          <img src="wildrumpus-key-upright-v05.png" width="1002" height="2633" alt="">
           <span class="curiosity-caption">Every idea has<br>another chapter.</span>
         </div>
       </div>
@@ -189,7 +189,7 @@ h1 em{font-style:italic;color:#805ea5}
     </div>
     <div id="projects" class="grid" aria-live="polite"></div>
   </main>
-  <footer class="footer"><strong>Curiosity has no deadline. ♡</strong><span>Made for beautiful ideas and beautifully imperfect humans.</span></footer>
+  <footer class="footer"><strong>Creativity has no time limit ♡</strong><span>Made for beautiful ideas and beautifully imperfect humans.</span></footer>
 </div>
 
 <div id="formOverlay" class="overlay" role="presentation">
@@ -253,7 +253,7 @@ function draw(){const n={active:0,paused:0,finished:0};for(const p of projects)n
  $$('.filter').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===filter)));
  $('#sampleBanner').hidden=!projects.some(p=>p.demo);
  const data=projects.filter(p=>filter==='all'||p.status===filter).sort((a,b)=>(b.updatedAt||'').localeCompare(a.updatedAt||''));
- $('#projects').innerHTML=data.length?data.map(p=>'<article class="project" tabindex="0" role="button" aria-label="Open '+esc(p.title)+'" data-id="'+esc(p.id)+'"><div class="art '+p.color+'">'+image(p)+'</div><div class="project-body"><div class="card-top"><span class="status '+p.status+'">'+(p.status==='active'?'✳ ':p.status==='paused'?'☕ ':'✦ ')+statuses[p.status]+'</span><span class="updated">'+timeAgo(p.updatedAt)+'</span></div><h3>'+esc(p.title)+'</h3><p class="next"><i>↝</i> '+esc(p.next||(p.status==='finished'?'You made a thing!':'Leave yourself a next step'))+'</p></div></article>').join(''):'<div class="empty"><div class="icon">🪄</div><h3>'+ (filter==='all'?'A little room for new ideas':'Nothing on this shelf yet')+'</h3><p>'+(filter==='all'?'Your next beautiful, unfinished thing can live right here.':'Try another shelf or add a new project.')+'</p><button class="dark-btn new-project">＋ Add a project</button></div>';
+ $('#projects').innerHTML=data.length?data.map(p=>'<article class="project" tabindex="0" role="button" aria-label="Open '+esc(p.title)+'" data-id="'+esc(p.id)+'"><div class="art '+p.color+'">'+image(p)+'</div><div class="project-body"><div class="card-top"><span class="status '+p.status+'">'+(p.status==='active'?'✳ ':p.status==='paused'?'☕ ':'✦ ')+statuses[p.status]+'</span><span class="updated">'+timeAgo(p.updatedAt)+'</span></div><h3>'+esc(p.title)+'</h3><p class="next"><i>↝</i> '+esc(p.next||(p.status==='finished'?'You made a thing!':'Leave yourself a next step'))+'</p></div></article>').join(''):'<div class="empty"><div class="icon">🪄</div><h3>'+ (filter==='all'?'A little room for new ideas':'Nothing on this shelf yet')+'</h3><p>'+(filter==='all'?'Your next beautiful, unfinished thing can live right here.':'Try another shelf or add a new project.')+'</p><button class="dark-btn new-project" aria-label="Add a project">＋ Add a project</button></div>';
  $$('#projects .project').forEach(el=>{el.addEventListener('click',()=>openProject(el.dataset.id));el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProject(el.dataset.id);}});});
  $$('#projects .new-project').forEach(el=>el.addEventListener('click',()=>showForm()));
 }
