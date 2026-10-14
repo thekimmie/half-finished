@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f8f3e7">
+  <meta name="theme-color" content="#282031">
   <meta name="description" content="A gentle home for your unfinished creative projects. Pick up where you left off.">
   <meta name="color-scheme" content="light">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
-  <title>Half-Finished — Your creative little corner</title>
+  <title>Half-Finished — The Wild Little Studio</title>
 <style>
 :root {
  --ink:#302638; --muted:#736b75; --cream:#faf6eb; --paper:#fffdf6; --purple:#7656a8;
@@ -133,13 +133,14 @@ h1 em{font-style:italic;color:#805ea5}
 @media(max-width:620px){.site-shell{padding:0 15px}.topbar{height:76px}.brand-text{font-size:21px}.brand-mark{height:36px;width:36px;font-size:22px}.brand-sub{font-size:8px}.top-links .soft-action{display:none}.dark-btn{padding:10px 13px;font-size:12px}.hero{display:block;min-height:0;border-radius:22px}.hero-copy{padding:30px 24px 35px}.hero-copy h1{font-size:42px;letter-spacing:-1.9px}.hero-copy p{font-size:14px}.hero-visual{display:none}.section-head{align-items:start;margin-top:27px}.section-head h2{font-size:28px}.section-actions{max-width:130px}.section-actions .outline-btn{padding:9px 12px;font-size:11px}.studio-meta{margin-top:16px}.grid{grid-template-columns:1fr;gap:16px}.art{height:190px}.form-row{grid-template-columns:1fr;gap:0}.modal{padding:18px;max-height:95vh}.drawer{padding:18px}.sample-note{align-items:flex-start;flex-direction:column;gap:6px}.footer{padding-bottom:26px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
 </style>
+<link rel="stylesheet" href="studio-theme.css?v=2">
 </head>
 <body>
 <div class="site-shell">
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Half-Finished home">
-      <span class="brand-mark" aria-hidden="true">✳</span>
-      <span><span class="brand-text">half-finished<span style="color:#9874bc">.</span></span><span class="brand-sub" style="display:block">the creative little corner</span></span>
+      <span class="brand-mark" aria-hidden="true"><img src="studio-key.svg" alt=""></span>
+      <span><span class="brand-text">half-finished<span class="brand-dot">.</span></span><span class="brand-sub" style="display:block">the wild little studio</span></span>
     </a>
     <div class="top-links">
       <div class="menu-wrap">
@@ -156,29 +157,25 @@ h1 em{font-style:italic;color:#805ea5}
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <div class="eyebrow">Welcome to your creative corner</div>
+        <div class="eyebrow">An atelier for beautifully unfinished things</div>
         <h1 id="hero-title">Beautiful things take <em>their own sweet time.</em></h1>
-        <p>A cozy place for the projects you love, the ideas you started, and the little steps that bring you back.</p>
+        <p>A curious little home for the things you started, the things you love, and all the magic still in the making.</p>
         <div class="hero-actions">
           <button class="dark-btn new-project">＋ Start something</button>
           <button class="outline-btn" id="surpriseBtn">✦ Pick one for me</button>
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
-        <span class="flower one">✿</span><span class="flower two">✽</span>
-        <span class="spark one">✧</span><span class="spark two">✦</span>
-        <div class="paper-note">
-          <div class="note-title">A little note to self...</div>
-          <ul class="note-list">
-            <li><span>✓</span> Start with curiosity</li>
-            <li><span>♡</span> Save the good ideas</li>
-            <li><span>✦</span> Come back whenever</li>
-          </ul>
+        <span class="cabinet-star a">✧</span><span class="cabinet-star b">✺</span><span class="cabinet-star c">✦</span>
+        <div class="curiosity-frame">
+          <span class="curiosity-label">The Cabinet of Curiosities</span>
+          <img src="studio-key.svg" alt="">
+          <span class="curiosity-caption">Every idea has<br>another chapter.</span>
         </div>
       </div>
     </section>
     <div class="section-head">
-      <div><h2>On your worktable <span aria-hidden="true" style="color:#af91b3">✳</span></h2><p>Every little bit of progress belongs here.</p></div>
+      <div><h2>On your worktable <span aria-hidden="true">✳</span></h2><p>For works in progress, happy accidents, and future masterpieces.</p></div>
       <div class="section-actions"><button class="outline-btn" id="surpriseBtnTwo">↝ Surprise me</button></div>
     </div>
     <div class="studio-meta" id="stats" aria-label="Project totals"></div>
@@ -191,7 +188,7 @@ h1 em{font-style:italic;color:#805ea5}
     </div>
     <div id="projects" class="grid" aria-live="polite"></div>
   </main>
-  <footer class="footer"><strong>Slow making is still making. ♡</strong><span>Made for beautiful ideas and beautifully imperfect humans.</span></footer>
+  <footer class="footer"><strong>Curiosity has no deadline. ♡</strong><span>Made for beautiful ideas and beautifully imperfect humans.</span></footer>
 </div>
 
 <div id="formOverlay" class="overlay" role="presentation">
