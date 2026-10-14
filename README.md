@@ -65,4 +65,4 @@ This release changes **only presentation and microcopy**. It deliberately retain
 
 ## v0.3 original maker logo + Wild Rumpus colors
 
-The ornamental logo is a faithful vector tracing of the original uploaded artwork, credited to its creator, Kimmie Hamilton. Palette anchored by the original coral pink (#EA4B5F), with tangerine, marigold, teal and lilac accents. This is a visual-only update; project storage and saved records are unchanged. Do not reuse the logo outside this project without its creator’s permission.
+The ornamental logo is the exact original PNG artwork (with a secondary vector trace for scalable icons), credited to its creator, Kimmie Hamilton. Palette anchored by the original coral pink (#EA4B5F), with tangerine, marigold, teal and lilac accents. This is a visual-only update; project storage and saved records are unchanged. Do not reuse the logo outside this project without its creator’s permission.
