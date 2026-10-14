@@ -6,7 +6,7 @@
 
 A mobile-first, no-pressure app for makers, DIYers, artists, and people with a lot of good ideas. Built as a static site: no framework, npm install, database, account, or paid hosting is required.
 
-## What works in version 0.1
+## What works in version 0.2 (Wild Little Studio edition)
 
 - Add, edit, and delete creative projects
 - Add a project photo (resized and compressed in your browser), category, notes, and whimsical icon
@@ -56,3 +56,9 @@ The manifest supplies home-screen metadata. Offline access is not guaranteed yet
 ## Tech
 
 Vanilla HTML, CSS, JavaScript; localStorage and canvas image compression. No external services or analytics. MIT license can be added after deciding licensing; no license is granted by this repository as-is.
+
+## Visual direction — The Wild Little Studio (v0.2)
+
+The maker's [Wild Rumpus Agenda](https://www.wildrumpusagenda.com/) inspired a more theatrical, storybook visual identity: inky plum, electric fuchsia, antique-gold details, a bespoke ornate key, soft paper textures, and collected-curiosity frames. `studio-theme.css` holds the visual overrides and `studio-key.svg` is the key artwork. To revert the redesign without changing the app or its data, remove the `studio-theme.css` link from `index.html` and restore the previous hero HTML.
+
+This release changes **only presentation and microcopy**. It deliberately retains the `half-finished-v1-projects` local-storage key, project model, and all CRUD/export/import behavior; existing local projects should continue to load on the same browser/device.
